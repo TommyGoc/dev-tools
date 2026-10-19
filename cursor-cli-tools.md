@@ -43,6 +43,20 @@ brew install ripgrep fd jq yq ast-grep gh difftastic tokei
 gh auth login   # once
 ```
 
+## Kubernetes & system CLIs
+
+| Tool | Purpose | Repo |
+|------|---------|------|
+| `krr` | Prometheus-based Kubernetes CPU/memory request & limit recommendations | [robusta-dev/krr](https://github.com/robusta-dev/krr) |
+| `robusta` | Robusta CLI: Helm config wizard, playbooks, cluster diagnostics | [robusta-dev/robusta-cli](https://github.com/robusta-dev/robusta-cli) ([platform](https://github.com/robusta-dev/robusta)) |
+| `mo` (Mole) | macOS deep clean, uninstall leftovers, disk analyze, live status | [tw93/Mole](https://github.com/tw93/Mole) |
+
+```bash
+brew tap robusta-dev/homebrew-krr && brew install krr
+pip install -U robusta-cli --no-cache   # or: pipx run robusta-cli …
+brew install mole                       # binary: mo
+```
+
 ## Agent rule text
 
 Shell: prefer `rg` over grep, `fd` over find, `jq`/`yq` to extract only needed fields, `ast-grep` for structural code search/edits, `gh` for GitHub PRs/issues/CI, `tokei` for repo overview. Keep output small: filter, use `| head`, `--quiet`, failures-only test flags; never dump whole large files or logs.
